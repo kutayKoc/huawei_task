@@ -24,6 +24,7 @@ import java.util.List;
 /**
  * Created by kutay on 6.12.2018.
  */
+@CrossOrigin(origins = "https://agile-tor-66808.herokuapp.com/")
 @RestController
 @RequestMapping("/api")
 public class apiController {
