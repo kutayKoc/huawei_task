@@ -39,7 +39,7 @@ public class ToDoListsService {
         return this.listsRepository.findAll();
     }
 
-    public toDoLists getListFromUserId(String _id){
+    public toDoLists getListFromId(String _id){
         System.out.println(_id);
        return  this.listsRepository.findBy_id(_id);
     }

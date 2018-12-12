@@ -75,7 +75,7 @@ public class apiController {
     @RequestMapping(value="/toDoLists/all/{_id}",method=RequestMethod.GET)
     public void getListsFromUserId(HttpServletResponse response,@PathVariable("_id")String _id) throws IOException {
         try{
-            toDoLists data=this.listsService.getListFromUserId(_id);
+            toDoLists data=this.listsService.getListFromId(_id);
             ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
             String json = ow.writeValueAsString(data);
             response.setStatus(200);
