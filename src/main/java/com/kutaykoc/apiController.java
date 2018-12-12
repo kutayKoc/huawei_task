@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by kutay on 6.12.2018.
@@ -72,9 +73,9 @@ public class apiController {
 
     //get all lists
     @RequestMapping(value="/toDoLists/all/{_id}",method=RequestMethod.GET)
-    public void getListsFromUserId(HttpServletResponse response) throws IOException {
+    public void getListsFromUserId(HttpServletResponse response,@PathVariable("_id")String _id) throws IOException {
         try{
-            List<toDoLists> data=this.listsService.getAlltoDoLists();
+            toDoLists data=this.listsService.getListFromUserId(_id);
             ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
             String json = ow.writeValueAsString(data);
             response.setStatus(200);

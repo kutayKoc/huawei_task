@@ -5,7 +5,6 @@ import com.kutaykoc.database.toDoLists;
 import com.kutaykoc.database.user;
 import com.kutaykoc.repository.UserRepository;
 import com.kutaykoc.repository.toDoListsRepository;
-import com.kutaykoc.repository.toDoItemsRepository;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.result.UpdateResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,10 +39,9 @@ public class ToDoListsService {
         return this.listsRepository.findAll();
     }
 
-    public List<toDoLists> getListFromUserId(String _id){
-        user data=mongoTemplate.findOne(Query.query(Criteria.where("_id").is(_id)),user.class);
-        List<toDoLists> lists=mongoTemplate.find(Query.query(Criteria.where("_id").in(data.getToDoLists())),toDoLists.class);
-        return  lists;
+    public toDoLists getListFromUserId(String _id){
+        System.out.println(_id);
+       return  this.listsRepository.findBy_id(_id);
     }
     public toDoLists createToDoList(toDoLists theToDoLists){
         return this.listsRepository.save(theToDoLists);

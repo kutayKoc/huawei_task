@@ -10,5 +10,7 @@ import org.springframework.data.mongodb.repository.Query;
  */
 public interface toDoListsRepository extends MongoRepository<toDoLists,String> {
 
+    @Query(value = "{_id:?0}")
+    toDoLists findBy_id(String _id);
 
 }
