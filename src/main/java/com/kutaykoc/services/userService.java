@@ -50,7 +50,6 @@ public class userService {
     }
 
     public user userCheckLogin(String user_email,String user_password){
-        System.out.println(user_email+user_password+" ddads");
 
         user data=mongoTemplate.findOne(Query.query(Criteria.where("user_email").is(user_email).and("user_password").is(user_password)),user.class);
         return data;
