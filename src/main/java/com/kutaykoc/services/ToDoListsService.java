@@ -3,6 +3,7 @@ package com.kutaykoc.services;
 import com.kutaykoc.database.toDoItem;
 import com.kutaykoc.database.toDoLists;
 import com.kutaykoc.database.user;
+import com.kutaykoc.repository.UserRepository;
 import com.kutaykoc.repository.toDoListsRepository;
 import com.kutaykoc.repository.toDoItemsRepository;
 import com.mongodb.BasicDBObject;
@@ -18,6 +19,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 
 /**
@@ -27,17 +29,22 @@ import java.util.List;
 public class ToDoListsService {
     @Autowired
     private toDoListsRepository listsRepository;
-
     @Autowired
-    private toDoItemsRepository itemRepository;
+    private UserRepository userRepository;
 
     @Autowired
     MongoTemplate mongoTemplate;
 
     public List<toDoLists> getAlltoDoLists(){
+
         return this.listsRepository.findAll();
     }
 
+    public List<toDoLists> getListFromUserId(String _id){
+        user data=mongoTemplate.findOne(Query.query(Criteria.where("_id").is(_id)),user.class);
+        List<toDoLists> lists=mongoTemplate.find(Query.query(Criteria.where("_id").in(data.getToDoLists())),toDoLists.class);
+        return  lists;
+    }
     public toDoLists createToDoList(toDoLists theToDoLists){
         return this.listsRepository.save(theToDoLists);
 

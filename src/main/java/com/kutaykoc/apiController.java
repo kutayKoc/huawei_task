@@ -54,7 +54,7 @@ public class apiController {
     }
 
     //get all lists
-    @RequestMapping(value="/toDoLists/all",method=RequestMethod.GET)
+    @RequestMapping(value="/toDoLists/all/",method=RequestMethod.GET)
     public void getAllLists(HttpServletResponse response) throws IOException {
         try{
             List<toDoLists> data=this.listsService.getAlltoDoLists();
@@ -69,6 +69,24 @@ public class apiController {
             response.getWriter().write(e.toString());
         }
     }
+
+    //get all lists
+    @RequestMapping(value="/toDoLists/all/{_id}",method=RequestMethod.GET)
+    public void getListsFromUserId(HttpServletResponse response) throws IOException {
+        try{
+            List<toDoLists> data=this.listsService.getAlltoDoLists();
+            ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+            String json = ow.writeValueAsString(data);
+            response.setStatus(200);
+            response.setHeader("Content-Type","application/json");
+            response.getWriter().write(json);
+        }catch(Exception e){
+            response.setStatus(400);
+            response.setHeader("Content-Type","application/text");
+            response.getWriter().write(e.toString());
+        }
+    }
+
 
     //create new user
     @RequestMapping(value="/query/user/insert",method=RequestMethod.PUT)
