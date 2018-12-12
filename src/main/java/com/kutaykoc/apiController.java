@@ -54,7 +54,7 @@ public class apiController {
     }
 
     //get all lists
-    @RequestMapping(value="/toDoLists/all/",method=RequestMethod.GET)
+    @RequestMapping(value="/toDoLists/all",method=RequestMethod.GET)
     public void getAllLists(HttpServletResponse response) throws IOException {
         try{
             List<toDoLists> data=this.listsService.getAlltoDoLists();
