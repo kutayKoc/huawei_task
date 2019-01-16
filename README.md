@@ -13,26 +13,23 @@ https://yourdomain/api/user/all
 @RequestMapping(value="/user/all", method= RequestMethod.GET)
 public void getAllUser()
 
-```
->get all user from database
+get all user from database
 Request method is GET
+```
 
 ```
  @RequestMapping(value="/toDoLists/all",method=RequestMethod.GET)
 public void getAllLists()
 
-```
->get all lists from datebase
+get all lists from datebase
 Request method is GET
+```
 
 ```
   @RequestMapping(value="/query/user/insert",method=RequestMethod.PUT)
 public void insertUser(@RequestBody user)
 
-```
-
-```
->create new user using 'user' model.. this function waiting user model json data
+create new user using 'user' model.. this function waiting user model json data
 Request method is PUT
 body example
 {
@@ -49,45 +46,50 @@ body example
 @RequestMapping(value="/query/user/{name}",method=RequestMethod.GET)
     public void getUserFromName(@PathVariable("name") String name)
 
-```
->get user from name
+get user from name
 Request method is GET
+```
 
 ```
 @RequestMapping(value = "/query/user/login/check",method = RequestMethod.POST)
     public void checkUserLoginData(@RequestBody user theuser)
 
-```
->check user login . this function waiting user model json data
+check user login . this function waiting user model json data
 Request method is POST
+```
 
 ```
 @RequestMapping(value="/query/toDoLists/toDoItems/insert/{_id}",method=RequestMethod.PUT)
     public void inserttoDoItemsTotoDoLists(@PathVariable("_id") String _id,@RequestBody toDoItem theToDoItems)
 
-```
->create new item to list. this function waiting item model json data
+create new item to list. this function waiting item model json data
 Request method is PUT
 
+Body example
+ {
+    "list_name":"kutay yapılacaklar",
+    "list_create_date":"10.10.2018"
+ }
+```
+
 
 
 ```
-    @RequestMapping(value="/query/toDoItems/toDoItems/update/{item_id}",method=RequestMethod.POST)
-    public void updateToDoItems(@PathVariable("item_id")String item_id,@RequestBody toDoItem theToDoItem)
+@RequestMapping(value="/query/toDoItems/toDoItems/update/{item_id}",method=RequestMethod.POST)
+public void updateToDoItems(@PathVariable("item_id")String item_id,@RequestBody toDoItem theToDoItem)
 
-```
->update item with id. this function waiting item model json data
+update item with id. this function waiting item model json data
 Request method is POST
-
+```
 
 
 ```
-    @RequestMapping(value="/query/toDoLists/update/{list_id}",method=RequestMethod.POST)
-    public void updateToDoListsElement(@PathVariable("list_id") String list_id,@RequestBody toDoLists theToDoLists)
+@RequestMapping(value="/query/toDoLists/update/{list_id}",method=RequestMethod.POST)
+public void updateToDoListsElement(@PathVariable("list_id") String list_id,@RequestBody toDoLists theToDoLists)
 
-```
->update list element with id. this function waiting list model json data
+update list element with id. this function waiting list model json data
 Request method is POST
+```
 
 
 
