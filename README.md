@@ -33,14 +33,15 @@ public void insertUser(@RequestBody user)
 >create new user using 'user' model.. this function waiting user model json data
 Request method is PUT
 body example
+```
 {
 	"user_firstName":"clarke",
 	"user_lastName":"kent",
 	"user_password":"123456",
 	"user_email":"superboy@outlook.com",
 	"user_nickname":"clarkelouis"
-	
 }
+```
 
 
 ```
