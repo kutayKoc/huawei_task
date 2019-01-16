@@ -5,7 +5,7 @@ Clone or download
 ## Example reguest
 
 https://yourdomain/api/user/all
-you have to add '/api/' for request 
+>you have to add '/api/' for request 
 
 
 ## Functions
