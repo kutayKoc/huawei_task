@@ -67,7 +67,7 @@ Request method is PUT
 
 Body example
  {
-    "list_name":"kutay yapılacaklar",
+    "list_name":"kutay yapilacaklar",
     "list_create_date":"10.10.2018"
  }
 ```
