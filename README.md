@@ -2,6 +2,10 @@
 ## Installation
 Clone or download
 
+## Example reguest
+
+https://domain/api/user/all
+
 ## Functions
 ```
 @RequestMapping(value="/user/all", method= RequestMethod.GET)
