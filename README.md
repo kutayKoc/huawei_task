@@ -4,7 +4,9 @@ Clone or download
 
 ## Example reguest
 
-https://domain/api/user/all
+https://yourdomain/api/user/all
+you have to add '/api/' for request 
+
 
 ## Functions
 ```
@@ -38,7 +40,7 @@ Request method is PUT
 
 ```
 >get user from name
-Request methos is GET
+Request method is GET
 
 ```
 @RequestMapping(value = "/query/user/login/check",method = RequestMethod.POST)
@@ -46,7 +48,7 @@ Request methos is GET
 
 ```
 >check user login . this function waiting user model json data
-Request methos is POST
+Request method is POST
 
 ```
 @RequestMapping(value="/query/toDoLists/toDoItems/insert/{_id}",method=RequestMethod.PUT)
@@ -54,7 +56,7 @@ Request methos is POST
 
 ```
 >create new item to list. this function waiting item model json data
-Request methos is PUT
+Request method is PUT
 
 
 
@@ -64,7 +66,7 @@ Request methos is PUT
 
 ```
 >update item with id. this function waiting item model json data
-Request methos is POST
+Request method is POST
 
 
 
@@ -74,7 +76,7 @@ Request methos is POST
 
 ```
 >update list element with id. this function waiting list model json data
-Request methos is POST
+Request method is POST
 
 
 
@@ -84,7 +86,7 @@ Request methos is POST
 
 ```
 >delete user with id.
-Request methos is DELETE
+Request method is DELETE
 
 
 
@@ -94,7 +96,7 @@ Request methos is DELETE
 
 ```
 >delete list with id.
-Request methos is DELETE
+Request method is DELETE
 
 
 
@@ -106,7 +108,7 @@ Request methos is DELETE
 
 ```
 >add dependencies id to item with id. item_id is insertin _id
-Request methos is PUT
+Request method is PUT
 
 
 ```
@@ -115,7 +117,7 @@ Request methos is PUT
 
 ```
 >delete dependencies id to item with id. item_id is deleting _id
-Request methos is DELETE
+Request method is DELETE
 
 
 
@@ -125,7 +127,7 @@ Request methos is DELETE
 
 ```
 >List dependencies id to item with id.
-Request methos is GET
+Request method is GET
 
 
 
