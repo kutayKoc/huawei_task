@@ -13,6 +13,7 @@ https://yourdomain/api/user/all
 @RequestMapping(value="/user/all", method= RequestMethod.GET)
 public void getAllUser()
 
+https://yourdomain/api/user/all
 get all user from database
 Request method is GET
 ```
@@ -21,6 +22,7 @@ Request method is GET
 @RequestMapping(value="/toDoLists/all",method=RequestMethod.GET)
 public void getAllLists()
 
+https://yourdomain/api/toDoLists/all
 get all lists from datebase
 Request method is GET
 ```
@@ -29,6 +31,7 @@ Request method is GET
 @RequestMapping(value="/query/user/insert",method=RequestMethod.PUT)
 public void insertUser(@RequestBody user)
 
+https://yourdomain/api/query/user/insert
 create new user using 'user' model.. this function waiting user model json data
 Request method is PUT
 body example
@@ -46,6 +49,7 @@ body example
 @RequestMapping(value="/query/user/{name}",method=RequestMethod.GET)
 public void getUserFromName(@PathVariable("name") String name)
 
+https://yourdomain/api/query/user/{name}
 get user from name
 Request method is GET
 ```
@@ -54,6 +58,7 @@ Request method is GET
 @RequestMapping(value = "/query/user/login/check",method = RequestMethod.POST)
 public void checkUserLoginData(@RequestBody user theuser)
 
+https://yourdomain/api/query/user/login/check
 check user login . this function waiting user model json data
 Request method is POST
 ```
@@ -62,6 +67,7 @@ Request method is POST
 @RequestMapping(value="/query/toDoLists/toDoItems/insert/{_id}",method=RequestMethod.PUT)
 public void inserttoDoItemsTotoDoLists(@PathVariable("_id") String _id,@RequestBody toDoItem theToDoItems)
 
+https://yourdomain/api/query/toDoLists/toDoItems/insert/{_id}
 create new item to list. this function waiting item model json data
 Request method is PUT
 
@@ -78,6 +84,7 @@ Body example
 @RequestMapping(value="/query/toDoItems/toDoItems/update/{item_id}",method=RequestMethod.POST)
 public void updateToDoItems(@PathVariable("item_id")String item_id,@RequestBody toDoItem theToDoItem)
 
+https://yourdomain/api/query/toDoItems/toDoItems/update/{item_id}
 update item with id. this function waiting item model json data
 Request method is POST
 Body example 
@@ -93,6 +100,7 @@ Body example
 @RequestMapping(value="/query/toDoLists/update/{list_id}",method=RequestMethod.POST)
 public void updateToDoListsElement(@PathVariable("list_id") String list_id,@RequestBody toDoLists theToDoLists)
 
+https://yourdomain/api/query/toDoLists/update/{list_id}
 update list element with id. this function waiting list model json data
 Request method is POST
 Body Example
@@ -109,7 +117,7 @@ Body Example
 @RequestMapping(value="/query/user/delete/{_id}",method=RequestMethod.DELETE)
 public void deleteUserWithId(@PathVariable("_id") String _id)
 
-
+https://yourdomain/api/query/user/delete/{_id}
 delete user with id.
 Request method is DELETE
 ```
@@ -119,6 +127,7 @@ Request method is DELETE
 @RequestMapping(value="/query/toDoLists/delete/{user_id}/{_id}",method=RequestMethod.DELETE)
 public void deleteToDoLists(@PathVariable("_id") String _id,@PathVariable("user_id")String user_id)
 
+https://yourdomain/api/query/toDoLists/delete/{user_id}/{_id}
 delete list with id.
 Request method is DELETE
 ```
@@ -129,6 +138,7 @@ Request method is DELETE
 @RequestMapping(value="/query/toDoItems/dependencies/insert/{_id}",method=RequestMethod.PUT)
 public void insertDependenciesToItem(@PathVariable("_id")String _id,String item_id)
 
+https://yourdomain/api/query/toDoItems/dependencies/insert/{_id}
 add dependencies id to item with id. item_id is insertin _id
 Request method is PUT
 ```
@@ -138,6 +148,7 @@ Request method is PUT
 @RequestMapping(value="/query/toDoItems/dependencies/delete/{_id}",method=RequestMethod.DELETE)
 public void deleteDependenciesFromItems(@PathVariable("_id")String _id,String item_id)
 
+https://yourdomain/api/query/toDoItems/dependencies/delete/{_id}
 delete dependencies id to item with id. item_id is deleting _id
 Request method is DELETE
 ```
@@ -147,6 +158,7 @@ Request method is DELETE
 @RequestMapping(value="/query/toDoItems/dependencies/list/{_id}",method = RequestMethod.GET)
 public void listDependenciesFromItems(@PathVariable("_id")String _id)
 
+https://yourdomain/api/query/toDoItems/dependencies/list/{_id}
 List dependencies id to item with id.
 Request method is GET
 ```
