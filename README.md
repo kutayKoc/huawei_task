@@ -30,10 +30,11 @@ Request method is GET
 public void insertUser(@RequestBody user)
 
 ```
+
+```
 >create new user using 'user' model.. this function waiting user model json data
 Request method is PUT
 body example
-```
 {
 	"user_firstName":"clarke",
 	"user_lastName":"kent",
